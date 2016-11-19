@@ -18,7 +18,7 @@
    
   - name: Pull OSCAP Report From Remote Machine
     fetch: src=/tmp/oscap-results.html dest=~/results/oscap{{ ansible_eth0["ipv4"]["address"] }}
-    ignore_erros:yes
+    ignore_errors: yes
     
   - name: Email results
     local_action: mail
@@ -30,4 +30,4 @@
                   subject='OSCAP-report'
                   body='System {{ ansible_hostname }} has been successfully provisioned and tested.'
                   attach="~/results/oscap{{ ansible_eth0["ipv4"]["address"] }}"
-    ignore_erros:yes 
+    ignore_errors: yes 
