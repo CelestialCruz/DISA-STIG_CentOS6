@@ -1,0 +1,7 @@
+[local]
+localhost
+
+[webserver]
+
+#[ec2_instance]
+#tag_Name_Server1

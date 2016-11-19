@@ -1,0 +1,19 @@
+---
+
+#The purpose of this task is to install common applications across all machines and update them to their latest versions. 
+
+  - name: Install basic features
+    yum: name={{ item }} state=present
+    with_items:
+      - https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+      - nano
+      - wget
+      - libselinux-python
+      - ntp
+
+  - name: Start and enable ntp
+    service: name=ntpd state=started enabled=yes
+      
+#  - name: update CentOS
+#    yum: name=* state=latest update_cache=yes
+

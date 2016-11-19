@@ -1,0 +1,17 @@
+---
+
+#The purpose of this script is to install and configure OpenSCAP
+
+  - name: Install OpenSCAP
+    yum: name={{ item }} state=present
+    with_items:
+      - openscap
+      - openscap-utils
+      - scap-security-guide
+
+  - name: Adjust scap xml files to recognize CentOS
+    script: rewriteprofile.sh
+
+  - name: Run Report
+    command: oscap xccdf eval --profile stig-rhel6-server-upstream --results /tmp/oscap-results.xml --report /tmp/oscap-results.html --cpe /usr/share/xml/scap/ssg/content/ssg-rhel6-cpe-dictionary.xml /usr/share/xml/scap/ssg/content/ssg-rhel6-xccdf.xml
+    ignore_errors: yes

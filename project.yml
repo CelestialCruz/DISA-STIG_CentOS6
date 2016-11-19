@@ -1,0 +1,23 @@
+---
+
+#Main playbook for System Hardening
+
+- name: Provision hosts in AWS for security hardening
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  user: root
+  pre_tasks:
+   - include_vars: ~/Project_7/ec2_var/webservers.yml
+
+  roles:
+    - Commission
+
+- name: apply common configuration to ec2 instances
+  hosts: launched
+  user: root
+
+  roles:
+    - Common
+    - STIG_Config
+    - OpenSCAP
