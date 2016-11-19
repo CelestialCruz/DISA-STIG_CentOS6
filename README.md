@@ -51,10 +51,12 @@ Installation and deployment instructions for DISA_STIG playbook
 
 - Edit the "webservers.yml" file and match each parameter to a value that corresponds to your AWS environment. This file is referenced in the Commission role.
 
-https://cloud.githubusercontent.com/assets/20823757/17723147/b80f3bce-6405-11e6-8455-fe3dc015ea1e.png
+https://cloud.githubusercontent.com/assets/20823757/20454468/cc84eee2-ae0f-11e6-96ea-cb0198400353.png
+
+- Edit the "main.yml" file located in /roles/OpenSCAP/tasks/ and adjust the email information to match who you want to recieve the report.   *Do is optional and the script will not fail, nor will it inhibit generating the report in anyway if you ignore that task.
 
 - Finally, run the playbook
 
-           ansible-playbook -i hosts project.yml
+           ansible-playbook -vv -i localhost, -e "type=webservers" project.yml -v
 
 #After running the playbook
