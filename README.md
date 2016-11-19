@@ -63,3 +63,5 @@ https://cloud.githubusercontent.com/assets/20823757/20454468/cc84eee2-ae0f-11e6-
 
 #After running the playbook
 - Check the designated email or failing that, pull the oscap-results.html file from the remote node. Then open it and verify the result.
+https://cloud.githubusercontent.com/assets/20823757/20454565/8816c3b8-ae12-11e6-82ca-5600f85faa45.png
+https://cloud.githubusercontent.com/assets/20823757/20454567/8d481576-ae12-11e6-8636-b26ebd2cc268.png
