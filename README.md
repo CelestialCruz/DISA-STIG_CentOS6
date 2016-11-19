@@ -2,7 +2,7 @@
 Installation and deployment instructions for DISA_STIG playbook
 
 #Notes for people wanting to use this playbook
-  - Make sure you have know your AWS secret keys and other credentials as it will be necessary when making adjustment on the script.  
+  - Make sure you know your AWS secret keys and other AWS information as it will be necessary when making adjustment on the script.  
   - Anything in brackets in the README.md are values that depend on your setup.
   - The STIG_Config roles is derived from the AnsibleLockdown repository created by Sam Doran. You can look at the original role here:
     https://github.com/ansible/ansible-lockdown
