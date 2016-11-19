@@ -62,3 +62,4 @@ https://cloud.githubusercontent.com/assets/20823757/20454468/cc84eee2-ae0f-11e6-
            ansible-playbook -vv -i localhost, -e "type=webservers" project.yml -v
 
 #After running the playbook
+- Check the designated email or failing that, pull the oscap-results.html file from the remote node. Then open it and verify the result.
