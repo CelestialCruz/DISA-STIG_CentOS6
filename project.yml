@@ -8,7 +8,7 @@
   gather_facts: False
   user: root
   pre_tasks:
-   - include_vars: ~/Project_7/ec2_var/webservers.yml
+   - include_vars: ~/DISA-STIG_CentOS6/ec2_var/webservers.yml
 
   roles:
     - Commission
