@@ -47,7 +47,9 @@ Installation and deployment instructions for DISA_STIG playbook
 # Use playbook
 - Head into the "DISA-STIG_CentOS6" directory
 
--  Edit the "hosts" files and put the IP address of your webserver under "[webservers]", database servers under "[dbservers]", Redis server under [redissvr]", and HAProxy server under "[haproxysvr]"
+- Edit the "aws_environment" file and fill in the AWS Access and Secret key that corresponds to your account.
+
+- Edit the "webservers.yml" file and match each parameter to a value that corresponds to your AWS environment. This file is referenced in the Commission role.
 
 https://cloud.githubusercontent.com/assets/20823757/17723147/b80f3bce-6405-11e6-8455-fe3dc015ea1e.png
 
