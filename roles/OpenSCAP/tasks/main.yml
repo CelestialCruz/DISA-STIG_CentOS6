@@ -15,3 +15,19 @@
   - name: Run Report
     command: oscap xccdf eval --profile stig-rhel6-server-upstream --results /tmp/oscap-results.xml --report /tmp/oscap-results.html --cpe /usr/share/xml/scap/ssg/content/ssg-rhel6-cpe-dictionary.xml /usr/share/xml/scap/ssg/content/ssg-rhel6-xccdf.xml
     ignore_errors: yes
+   
+  - name: Pull OSCAP Report From Remote Machine
+    fetch: src=/tmp/oscap-results.html dest=~/results/oscap{{ ansible_eth0["ipv4"]["address"] }}
+    ignore_erros:yes
+    
+  - name: Email results
+    local_action: mail
+                  host='smtp.hotmail.com'
+                  port=465
+                  username=username@example.com
+                  password='password'
+                  to="John Smith <john.smith@example.com>"
+                  subject='OSCAP-report'
+                  body='System {{ ansible_hostname }} has been successfully provisioned and tested.'
+                  attach="~/results/oscap{{ ansible_eth0["ipv4"]["address"] }}"
+    ignore_erros:yes 
