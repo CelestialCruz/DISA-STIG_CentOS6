@@ -4,9 +4,10 @@ Installation and deployment instructions for DISA_STIG playbook
 #Notes for people wanting to use this playbook
   - Make sure you know your AWS secret keys and other AWS information as it will be necessary when making adjustment on the script.  
   - Anything in brackets in the README.md are values that depend on your setup.
-  - The STIG_Config roles is derived from the AnsibleLockdown repository created by Sam Doran. You can look at the original role here:
+  - The STIG_Config role is derived from the AnsibleLockdown repository created by Sam Doran. You can look at the original role here:
     https://github.com/ansible/ansible-lockdown
-  - When for instructions about how to edit the Open_SCAP role, please see the readme there.
+  - When for instructions about how to edit the STOG_Config role, please see the readme there.
+  - There are several STIG rules that I need to adjust for CentOS6 as they will generate an error and fail the script if invoked. This is     a long process and will be updated as deemed necessary.
 
 #Ansible basics for CentOS7
 - Install and update ansible;
